@@ -1,0 +1,223 @@
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/mixins.scss';
+
+// SCSS for Base Container for One-Way Journey
+.flex-container {
+  display: flex;
+  font-size: $fontsize-normal;
+
+  .one {
+    background-color: $primary-white;
+    width: 20%;
+    padding: 1rem .75rem;
+    text-align: center;
+    line-height: 75px;
+  }
+
+  .two {
+    background-color: #f1f1f1;
+    width: 80%;
+    text-align: center;
+    line-height: 75px;
+  }
+}
+
+// SCSS for Base Container For Return Journey
+.flex-container2 {
+  display: flex;
+  justify-content: space-around;
+  font-size: $fontsize-normal;
+
+  .equal-container {
+    background-color: #f1f1f1;
+    width: 50%;
+    padding: 0rem .75rem;
+    text-align: center;
+    line-height: 75px;
+  }
+}
+
+// SCSS for Journey Tabs
+.tab-base {
+  padding: 0px;
+}
+
+.tab-base>ul {
+  margin-left: 0px !important;
+  margin-bottom: 0px !important;
+  border: 0px !important;
+}
+
+.tab-base>ul>li {
+  margin: 0px 6px -1px 0px;
+  border: $width solid $primary-black;
+  border-radius: $width*2;
+}
+
+.tab-base>ul>li>a {
+  border: 0px;
+  border-radius: 0px;
+  margin: 0px;
+  line-height: 20px;
+  background-color: #fff !important;
+  color: #565656 !important;
+}
+
+.tab-base>.nav-tabs>.active>a {
+  border: 0px !important;
+  background: #3694F8 !important;
+  color: #fff !important;
+}
+
+.tab-base>ul>li>a:hover {
+  margin: 0px;
+}
+
+.nav-tabs>li {
+  float: left;
+  margin-bottom: -$width;
+}
+
+.nav>li {
+  position: relative;
+  display: block;
+}
+
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.active, .inactive {
+  cursor: pointer;
+}
+
+//SCSS for Flight Search Form
+.flight-search {
+  border: $width solid $primary-black;
+}
+
+.form-customInput {
+  font-size: $fontsize-normal;
+  width: 91%;
+  margin: 3% 0rem 0rem 4%;
+
+    &.dropdown {
+      height: calc(3.25rem + 2px) !important;
+    }
+
+    &.slider-box {
+    height: 92px;
+    padding: 0.1rem 0.75rem 0rem 0.75rem;
+    border: $width solid #ced4da;
+    border-radius: .25rem;
+    }
+}
+
+.input-font {
+  font-size: $fontsize-normal;
+}
+
+.slider {
+  font: 400 1rem Montserrat, sans-serif;
+  color: #495057;
+}
+
+.search-button {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 4%;
+}
+
+.section-seperator {
+  width: $width+$width;
+  background: $primary-black;
+}
+
+.result-section-seperator {
+  border-bottom: none;
+  border: $width solid $primary-black;
+  border-top: none;
+  background-color: $primary-white;
+  height: auto;
+  width: $width;
+  border-style: dashed;
+  border-right: none;
+}
+  
+  
+  /**************************************************\
+    Custom bootstrap
+  \**************************************************/
+
+  .btn {
+    $bgColor: #dddddd;
+    $color: dimgrey;
+  
+    @include button-mixin($bgColor, $color);
+      &.btn-primary {
+        @include button-mixin($accentColor, $primary-white);
+        &:active {
+          position: relative;
+          box-shadow: 0 $width*2 darken($bgColor, 10%);
+          top: $width*3;
+                }
+      }
+  }         
+
+  .bordered {
+    box-shadow: unset;
+    background: transparent;
+    border: $width*3 solid $accentColor;
+    border-radius: $width*4;
+    color: $accentColor;
+
+      &:hover {
+        background: $accentColor;
+        color: $primary-white;
+      }
+  }
+  
+    /****************************\
+    WIDTH STARTS
+    \****************************/
+    .w-33 {
+      width: 33%;
+    }
+    /****************************\
+    WIDTH ENDS
+    \****************************/
+
+  
+    /****************************\
+    PADDING STARTS
+    \****************************/
+    .p-1-0 {
+      padding: 1rem 0rem;
+    }
+    /****************************\
+    PADDING ENDS
+    \****************************/
+
+
+    /*************************\
+    FONT STARTS
+    \*************************/
+    // FONT SIZE
+    .text-normal {
+      font-size: 1.6rem;
+    }
+    
+    // FONT WEIGHT
+    .font-medium-dark {
+      font-weight: $fontWeight-normal;
+    }
+    /*************************\
+    FONT ENDS
+    \*************************/

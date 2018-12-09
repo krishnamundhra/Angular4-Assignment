@@ -1,0 +1,65 @@
+<div class="flex-container" *ngIf="this.flightDataGoing">
+  <div>
+    <span>
+      <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+    </span>
+  </div>
+  <div class="journey-details">
+    <span class="details-display">{{this.flightDataGoing[0].origin}} to {{this.flightDataGoing[0].destination}}
+    </span> 
+    <span class="details-display-secondary">{{this.noOfFlights}} flights found Sun, 01 November
+    </span>
+  </div>
+</div>
+<div class="flex-container2" *ngFor="let flight of flightDataGoing;index as i">
+  <div>
+    <span>
+      <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+    </span>
+  </div>
+  <div>
+    <span class="details-display">{{flight.name}}
+    </span> 
+    <span class="details-display-secondary">{{flight.flightNo}}
+    </span>
+  </div>
+  <div>
+    <span class="details-display">{{flight.departureTime}}
+    </span> 
+    <span class="details-display-secondary">{{flight.origin}}
+    </span>
+  </div>
+  <div>
+    <span class="details-display">{{flight.arrivalTime}}
+    </span> 
+    <span class="details-display-secondary">{{flight.destination}}
+    </span>
+  </div>
+  <div>
+    <span class="details-display">{{flight.timeDuration}}
+    </span> 
+    <span class="details-display-secondary">Non stop
+    </span>
+  </div>
+  <div class="flight-value">
+    <span>
+      <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+    </span>
+    <span class="flight-price">{{flight.price}}
+    </span>
+  </div>
+  <div class="flight-value">
+    <button class="btn bordered w-auto font-medium-dark" (click)="bookFlight(i)">
+      Book
+    </button>
+  </div>
+  <div class="flight-value total-fare" [hidden]="!this.displayTotalFareGoing">
+    <label class="total-fare-label">Total Fare
+    </label>
+    <span>
+      <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+    </span>
+    <span class="flight-price">{{this.passengersGoing * flight.price}}
+    </span>
+  </div>
+</div>

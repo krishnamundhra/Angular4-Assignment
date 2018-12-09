@@ -1,0 +1,134 @@
+<div *ngIf="this.flightDataGoing">
+  <div class="flex-container">
+    <div>
+      <span>
+        <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div class="journey-details">
+      <span class="details-display">{{this.flightDataGoing[0].origin}} to {{this.flightDataGoing[0].destination}}
+      </span> 
+      <span class="details-display-secondary">{{this.noOfFlightsGoing}} flights found Sun, 01 November
+      </span>
+    </div>
+  </div>
+  <div class="flex-container2" *ngFor="let flight of flightDataGoing;index as i">
+    <div>
+      <span>
+        <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight.name}}
+      </span> 
+      <span class="details-display-secondary">{{flight.flightNo}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight.departureTime}}
+      </span> 
+      <span class="details-display-secondary">{{flight.origin}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight.arrivalTime}}
+      </span> 
+      <span class="details-display-secondary">{{flight.destination}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight.timeDurationGoing}}
+      </span> 
+      <span class="details-display-secondary">Non stop
+      </span>
+    </div>
+    <div class="flight-value">
+      <span>
+        <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+      </span>
+      <span class="flight-price">{{flight.price}}
+      </span>
+    </div>
+    <div class="flight-value">
+      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightGoing(i)">
+        Book
+      </button>
+    </div>
+    <div class="flight-value total-fare" [hidden]="!this.displayTotalFareGoing">
+      <label class="total-fare-label">Total Fare
+      </label>
+      <span>
+        <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+      </span>
+      <span class="flight-price">{{this.passengersGoing * flight.price}}
+      </span>
+    </div>
+  </div>
+</div>
+<div *ngIf="this.flightDataComing">
+  <div class="flex-container">
+    <div>
+      <span>
+        <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div class="journey-details">
+      <span class="details-display">{{this.flightDataComing[0].origin}} to {{this.flightDataComing[0].destination}}
+      </span> 
+      <span class="details-display-secondary">{{this.noOfFlightsComing}} flights found Mon, 02 November
+      </span>
+    </div>
+  </div>
+  <div class="flex-container2" *ngFor="let flight2 of flightDataComing;index as i">
+    <div>
+      <span>
+        <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight2.name}}
+      </span> 
+      <span class="details-display-secondary">{{flight2.flightNo}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight2.departureTime}}
+      </span> 
+      <span class="details-display-secondary">{{flight2.origin}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight2.arrivalTime}}
+      </span> 
+      <span class="details-display-secondary">{{flight2.destination}}
+      </span>
+    </div>
+    <div>
+      <span class="details-display">{{flight2.timeDurationComing}}
+      </span> 
+      <span class="details-display-secondary">Non stop
+      </span>
+    </div>
+    <div class="flight-value">
+      <span>
+        <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+      </span>
+      <span class="flight-price">{{flight2.price}}
+      </span>
+    </div>
+    <div class="flight-value">
+      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightComing(i)">
+        Book
+      </button>
+    </div>
+    <div class="flight-value total-fare" [hidden]="!this.displayTotalFareComing">
+      <label class="total-fare-label">Total Fare
+      </label>
+      <span>
+        <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+      </span>
+      <span class="flight-price">{{this.passengersComing * flight2.price}}
+      </span>
+    </div>
+  </div>
+</div>

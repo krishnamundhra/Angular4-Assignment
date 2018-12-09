@@ -1,0 +1,151 @@
+@import '../../../assets/scss/variables.scss';
+@import '../../../styles.scss';
+
+body {
+  $font: 'Montserrat', sans-serif;
+  font: 400 1rem #{$font};
+}
+
+//SCSS for Header Container
+.flex-container {
+  display: flex;
+  background-color: $primary-white;
+  border: $width solid $primary-black;
+  margin-top: -$width;
+  line-height: normal;
+  align-items: center;
+
+  .journey-details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.flex-container > div {
+  margin: 0.8rem;
+  padding: 0.8rem;
+}
+
+//SCSS for Body Container
+.flex-container2 {
+  border: $width solid $primary-black;
+  line-height: normal;
+  margin: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  background-color: $primary-white;
+  height: 12rem;
+}
+
+.flex-container2 > div {
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+//SCSS for Form
+.details-display {
+  padding: 0rem 0.15rem 0rem 0.15rem;
+  font-weight: $fontWeight-small;
+  float: left;
+  font-size: $fontsize-small;
+  line-height: 30px;
+
+  &.price-color {
+     color: red;
+  }
+}
+
+.details-display-secondary {
+  padding: 0rem 0.15rem 0rem 0.15rem;
+  font-weight: $fontWeight-xsmall;
+  font-size: $fontsize-small;
+  float: left;
+  font-size: $fontsize-normal - 3;
+  color: darkgrey;
+}
+
+.flight-value {
+  display: inline-flex;
+
+  .flight-price {
+    color: red;
+    font-size: $fontsize-xlarge;
+    font-weight: $fontWeight-normal;
+  }
+}
+
+.total-fare {
+  display: block;
+}
+
+.total-fare-label {
+  font-size: $fontsize-large;
+  font-weight: $fontWeight-normal;
+}
+
+/**************************************************\
+  Custom bootstrap
+  \**************************************************/
+  .btn {
+    $bgColor: #dddddd;
+    $color: $primary-black;
+  
+    cursor: pointer;
+    @include button-mixin($bgColor, $color);
+    &.btn-primary {
+      @include button-mixin($accentColor, $primary-white);
+      &:active {
+        position: relative;
+        box-shadow: 0 $width*2 darken($bgColor, 10%);
+        top: $width*3;
+      }
+    }
+  }
+
+  .bordered {
+    box-shadow: unset;
+    background: $book-button;
+    border-radius: $width*4;
+    color: $primary-white;
+
+    &:hover {
+      background: $primary-white;
+      color: $book-button;
+      border: $width*2 solid $book-button;
+    }
+  }
+  
+    /****************************\
+    WIDTH STARTS
+    \****************************/
+    .w-auto {
+      width: auto;
+      height: auto;
+    }
+    /****************************\
+    WIDTH ENDS
+    \****************************/
+
+  
+  /****************************\
+    PADDING STARTS
+    \****************************/
+    .p-1-0 {
+      padding: 1rem 0rem;
+    }
+    /****************************\
+    PADDING ENDS
+    \****************************/
+  
+  
+  
+     /*************************\
+    FONT STARTS
+    \*************************/    
+    // FONT WEIGHT
+    .font-medium-dark {
+      font-size: $fontsize-xsmall;
+    }
+    /*************************\
+    FONT ENDS
+    \*************************/

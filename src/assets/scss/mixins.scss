@@ -1,0 +1,6 @@
+
+@mixin button-mixin($bgColor, $color) {
+    background: $bgColor;
+    color: $color;
+    position: relative;
+  }

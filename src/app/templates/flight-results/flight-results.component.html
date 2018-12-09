@@ -1,0 +1,88 @@
+<div class="flex-container">
+  <div class="one">
+    <div class="tab-base">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" disabled="true" (click)="((disabled = journey) && hideReturnDate())">One Way
+          </a>
+        </li>
+        <li>
+          <a data-toggle="tab" (click)="disabled = !journey">Return
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade in active">
+        <div class="flight-search">
+          <div>
+            <input placeholder="Enter Origin City" type="text" class="form-control form-customInput" [(ngModel)]="origin" [ngbTypeahead]="search"/>
+          </div>
+          <div>
+            <input placeholder="Enter Destination City" type="text" class="form-control form-customInput" [(ngModel)]="destination" [ngbTypeahead]="search"/>
+          </div>       
+          <div class="input-group form-customInput">
+            <input class="form-control input-font" placeholder="Departure Date"
+                   name="dp" [(ngModel)]="dtmodel" ngbDatepicker #d1="ngbDatepicker" [minDate]="{year: 2020, month: 11, day: 01}"
+                   [maxDate]="{year: 2020, month: 11, day: 02}"
+                   [markDisabled]="isDisabled">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary glyphicon glyphicon-calendar input-font" (click)="d1.toggle()" type="button">
+              </button>
+            </div>
+          </div>
+          <div class="input-group form-customInput">
+            <input class="form-control input-font" placeholder="Return Date" [disabled]="this.disabled"
+                   name="rd" ngbDatepicker #d2="ngbDatepicker" [(ngModel)]="rdmodel" [disabled]="this.disabled" [minDate]="{year: 2020, month: 11, day: 01}"
+                   [maxDate]="{year: 2020, month: 11, day: 02}"
+                   [markDisabled]="isDisabled">
+            <div class="input-group-append">
+              <button [disabled]="this.disabled" class="btn btn-outline-secondary glyphicon glyphicon-calendar input-font" (click)="d2.toggle()" type="button">
+              </button>
+            </div>
+          </div>
+          <div>
+            <select class="form-control form-customInput dropdown" [(ngModel)]="noPassengers">
+              <option value="0">Select Passengers</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-control form-customInput slider-box">
+            <label>Refine Flight Search
+            </label>
+            <ng5-slider class="slider" [(value)]="value" [options]="options">
+            </ng5-slider>
+          </div>
+          <div class="search-button p-1-0">
+            <button class="btn bordered mt-4 w-33 font-medium-dark text-normal" (click)="searchResults()">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-seperator">
+  </div>
+  <div class="two" *ngIf="this.finalGoing && !this.finalComing">
+    <app-one-way-journey-details-component [flightDataGoing]="this.finalGoing" [passengersGoing]="noPassengers">
+    </app-one-way-journey-details-component>
+  </div>
+  <div class="two" *ngIf="this.finalGoing && this.finalComing">
+    <div class="flex-container2">
+      <div class="equal-container">
+        <app-two-way-journey-details-component [flightDataGoing]="this.finalGoing" [passengersGoing]="noPassengers">
+        </app-two-way-journey-details-component>
+      </div>
+      <div class="result-section-seperator" *ngIf="this.finalComing">
+      </div>
+      <div class="equal-container">
+        <app-two-way-journey-details-component *ngIf="this.finalComing" [flightDataComing]="this.finalComing" [passengersComing]="noPassengers">
+        </app-two-way-journey-details-component>
+      </div>  
+    </div>
+  </div>
+</div>
