@@ -1,0 +1,254 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/scss/mixins.scss';
+@import './assets/scss/variables.scss';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  body {
+    box-sizing: border-box;
+    height: 100%;
+    user-select: none;
+  }
+
+  header {
+    position: static;
+    left: 0;
+    right: 0;
+    top: 0;
+    border: $width solid $primary-black;
+  }
+
+  section {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -$width;
+    border: $width solid $primary-black;
+  }
+ 
+
+  input,
+  select {
+    @include button-mixin($primary-white !important, $primary-black !important);
+  }
+
+
+  label {
+    float: left;
+    $font: 'Montserrat', sans-serif;
+    font: 400 1rem #{$font};
+    font-size: $fontsize-normal;
+    padding-top: 0.5rem;
+  }
+
+  input,
+  button {
+    $font: 'Montserrat', sans-serif;
+    font: 400 1rem #{$font};
+  }
+
+  ul {
+    list-style: none;
+  }
+  
+  input,
+  select,
+  button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  
+   
+  /**************************************************\
+  Custom bootstrap
+  \**************************************************/
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &::after {
+      display: block;
+      border-bottom: 0.4rem solid $accentColor;
+      width: 15rem;
+      margin: 3rem auto;
+    }
+  }
+
+  .disabled {
+    background: lightgray;
+    padding: 0.3rem 0.7rem;
+    color: dimgray;
+  }
+  .link {
+    color: $accentColor;
+    background: transparent;
+    padding: 0;
+    box-shadow: unset;
+    width: auto;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .accent-color {
+    color: $accentColor;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  
+  .transparent {
+    background: transparent;
+    color: $primary-white;
+    box-shadow: unset;
+  }
+  
+
+  
+  /*************************\
+  FONT STARTS
+  \*************************/
+  
+  // FONT COLORS
+  .dark-font {
+    color: #7a7a7a;
+  }
+  .light-dark-font {
+    color: #a6a5a5;
+  }
+  
+  // FONT SIZE
+  .text-normal {
+    font-size: 1.3rem;
+  }
+  .text-medium {
+    font-size: 2rem;
+  }
+  .text-large {
+    font-size: 3rem;
+  }
+  
+  // FONT WEIGHT
+  .font-light {
+    font-weight: 300;
+  }
+
+  /*************************\
+  FONT ENDS
+  \*************************/
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .input-bordered {
+    border: $width solid;
+    border-radius: 4px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &.v-center {
+      align-items: center;
+    }
+    &.flex-right {
+      justify-content: flex-end;
+    }
+    .col-8 {
+      width: 66.667%;
+    }
+    .col-2 {
+      width: 16.667%;
+    }
+    .col-4 {
+      width: 33.334%;
+    }
+  }
+  .align-center {
+    text-align: center;
+  }
+  
+  /****************************\
+  WIDTH STARTS
+  \****************************/
+  .w-50 {
+    width: 50%;
+    margin: 0 auto;
+  }
+  /****************************\
+  WIDTH ENDS
+  \****************************/
+  
+  /****************************\
+  MARGIN STARTS
+  \****************************/
+  
+  // MARGIN TOP
+  .mt-1 {
+    margin-top: 1rem;
+  }
+  .mt-2 {
+    margin-top: 2rem;
+  }
+  .mt-3 {
+    margin-top: 3rem;
+  }
+  
+  // MARGIN RIGHT
+  .mr-1 {
+    margin-right: 1rem;
+  }
+  .mr-2 {
+    margin-right: 2rem;
+  }
+  
+  // MARGIN LEFT
+  .ml-1 {
+    margin-left: 1rem;
+  }
+  
+  /****************************\
+  MARGIN ENDS
+  \****************************/
+  
+  /****************************\
+  PADDING STARTS
+  \****************************/
+  .p-0 {
+    padding: 0;
+  }
+  .p-1 {
+    padding: 1rem;
+  }
+  .p-2 {
+    padding: 2rem;
+  }
+  .p-default {
+    padding: 0.5rem 1rem;
+  }
+  .p-0-2 {
+    padding: 0rem 2rem;
+  }
+  
+  /****************************\
+  PADDING ENDS
+  \****************************/
+  
+  .material-icons {
+    vertical-align: middle;
+  }
+  
+
+ 
