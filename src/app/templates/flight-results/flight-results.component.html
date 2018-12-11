@@ -68,7 +68,7 @@
   <div class="section-seperator">
   </div>
   <div class="two" *ngIf="this.finalGoing && !this.finalComing">
-    <app-one-way-journey-details-component [flightDataGoing]="this.finalGoing" [passengersGoing]="noPassengers">
+    <app-one-way-journey-details-component [flightDataGoing]="this.flightDTO" [passengersGoing]="noPassengers">
     </app-one-way-journey-details-component>
   </div>
   <div class="two" *ngIf="this.finalGoing && this.finalComing">

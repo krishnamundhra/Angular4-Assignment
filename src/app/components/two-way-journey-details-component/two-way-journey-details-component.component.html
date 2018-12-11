@@ -37,7 +37,7 @@
       </span>
     </div>
     <div>
-      <span class="details-display">{{flight.timeDurationGoing}}
+      <span class="details-display">{{flight.timeDuration}}
       </span> 
       <span class="details-display-secondary">Non stop
       </span>
@@ -50,11 +50,11 @@
       </span>
     </div>
     <div class="flight-value">
-      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightGoing(i)">
+      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightGoing(flight)">
         Book
       </button>
     </div>
-    <div class="flight-value total-fare" [hidden]="!this.displayTotalFareGoing">
+    <div class="flight-value total-fare" [hidden]="!flight.displayTotalFareGoing">
       <label class="total-fare-label">Total Fare
       </label>
       <span>
@@ -104,7 +104,7 @@
       </span>
     </div>
     <div>
-      <span class="details-display">{{flight2.timeDurationComing}}
+      <span class="details-display">{{flight2.timeDuration2}}
       </span> 
       <span class="details-display-secondary">Non stop
       </span>
@@ -117,11 +117,11 @@
       </span>
     </div>
     <div class="flight-value">
-      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightComing(i)">
+      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightComing(flight2)">
         Book
       </button>
     </div>
-    <div class="flight-value total-fare" [hidden]="!this.displayTotalFareComing">
+    <div class="flight-value total-fare" [hidden]="!flight2.displayTotalFareComing">
       <label class="total-fare-label">Total Fare
       </label>
       <span>

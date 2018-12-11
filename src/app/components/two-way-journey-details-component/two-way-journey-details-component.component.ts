@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MockFlightJSONService } from '../../services/mock-flight-json.service';
 import * as moment from 'moment';
 
 @Component({
@@ -23,7 +22,7 @@ export class TwoWayJourneyDetailsComponentComponent implements OnInit {
   displayTotalFareGoing: boolean;
   displayTotalFareComing: boolean;
 
-  constructor(private MockFlightJSONService: MockFlightJSONService) { }
+  constructor() { }
   
   ngOnInit() {
 
@@ -81,11 +80,11 @@ export class TwoWayJourneyDetailsComponentComponent implements OnInit {
     return h + 'h' + " " + m + 'm';
    };
   
-   public bookFlightGoing(index) {
-    this.displayTotalFareGoing = true;
+   public bookFlightGoing(flight) {
+    flight.displayTotalFareGoing = !flight.displayTotalFareGoing;
    }
   
-   public bookFlightComing(index) {
-    this.displayTotalFareComing = true;
+   public bookFlightComing(flight2) {
+    flight2.displayTotalFareComing = !flight2.displayTotalFareComing;
    }
    }

@@ -27,11 +27,20 @@ body {
   display: flex;
   align-items: center;
   background-color: $primary-white;
+
+  &.multiple-flights {
+    margin-top: 3rem;
+  }
 }
 
 .flex-container2 > div {
   margin: 0.8rem;
     padding: 1.7rem;
+}
+
+.flex-container2.multiple-flights > div {
+  margin: 0.15rem;
+    padding: 0.15rem;
 }
 
 .flex-container > div {
@@ -55,8 +64,22 @@ body {
   font-weight: 400;
   font-size: $fontsize-small;
   float: left;
-  font-size: $fontsize-small;
   color: darkgrey;
+
+  &.hyperlink {
+    color: blue;
+    /* background: white; */
+    /* font-size: 15px; */
+    background: none!important;
+    /* color: inherit; */
+    /* border: none; */
+    /* padding: 0rem 0rem 0rem 0rem; */
+    /* font: inherit; */
+    border-bottom: 1px solid blue;
+    cursor: pointer;
+    /* margin: 0rem 0rem 0rem 0rem; */
+    width: auto;
+  }
 }
 
 
