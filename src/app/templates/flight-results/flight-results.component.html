@@ -67,21 +67,23 @@
   </div>
   <div class="section-seperator">
   </div>
-  <div class="two" *ngIf="this.flightDTO">
-    <app-one-way-journey-details-component [flightDataGoing]="this.flightDTO" [passengersGoing]="noPassengers">
+  <div class="two" *ngIf="this.flightDTOGoing && !this.flightDTOComing">
+    <app-one-way-journey-details-component [flightDataGoing]="this.flightDTOGoing" [passengersGoing]="noPassengers">
     </app-one-way-journey-details-component>
   </div>
-  <div class="two" *ngIf="this.finalGoing && this.finalComing">
+
+  
+  <div class="two" *ngIf="this.flightDTOGoing && this.flightDTOComing">
     <div class="flex-container2">
       <div class="equal-container">
-        <app-two-way-journey-details-component [flightDataGoing]="this.finalGoing" [passengersGoing]="noPassengers">
-        </app-two-way-journey-details-component>
+        <app-one-way-journey-details-component [flightDataGoing]="this.flightDTOGoing" [passengersGoing]="noPassengers">
+        </app-one-way-journey-details-component>
       </div>
-      <div class="result-section-seperator" *ngIf="this.finalComing">
+      <div class="result-section-seperator" *ngIf="this.flightDTOComing">
       </div>
       <div class="equal-container">
-        <app-two-way-journey-details-component *ngIf="this.finalComing" [flightDataComing]="this.finalComing" [passengersComing]="noPassengers">
-        </app-two-way-journey-details-component>
+        <app-one-way-journey-details-component *ngIf="this.flightDTOComing" [flightDataComing]="this.flightDTOComing" [passengersComing]="noPassengers">
+        </app-one-way-journey-details-component>
       </div>  
     </div>
   </div>

@@ -10,7 +10,8 @@ body {
   display: flex;
   background-color: $primary-white;
   border: $width solid $primary-black;
-  margin: -$width;
+  border-top: none !important;
+  border-left: none !important; 
   line-height: normal;
   align-items: center;
 
@@ -23,7 +24,7 @@ body {
 .flex-container2 {
   border: $width solid $primary-black;
   line-height: normal;
-  margin: 1rem;
+  margin: 0.5rem;
   display: flex;
   align-items: center;
   background-color: $primary-white;
@@ -34,8 +35,8 @@ body {
 }
 
 .flex-container2 > div {
-  margin: 0.8rem;
-    padding: 1.7rem;
+  //margin: 0.1rem;
+    padding: 0.7rem;
 }
 
 .flex-container2.multiple-flights > div {
@@ -49,10 +50,10 @@ body {
 }
 
 .details-display {
-  padding: 0rem 0.6rem 0rem 0.6rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
   font-weight: $fontWeight-normal;
   float: left;
-  font-size: 20px;
+  font-size: 16px;
 
     &.price-color {
       color: red;
@@ -62,7 +63,7 @@ body {
 .details-display-secondary {
   padding: 0rem 0.6rem 0rem 0.6rem;
   font-weight: 400;
-  font-size: $fontsize-small;
+  font-size: 13px;
   float: left;
   color: darkgrey;
 

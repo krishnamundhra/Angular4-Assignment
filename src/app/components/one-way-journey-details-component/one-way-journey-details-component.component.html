@@ -7,7 +7,7 @@
   <div class="journey-details">
       <span class="details-display">{{flightDataGoing[0].item.origin}} to {{flightDataGoing[0].item.destination}}
     </span>
-      <span class="details-display-secondary">{{this.noOfFlights}} flights found Sun, 01 November
+      <span class="details-display-secondary">{{this.noOfFlightsGoing}} flights found Sun, 01 November
     </span>
   </div>
 </div>
@@ -85,7 +85,7 @@
  </span>
   </div>
   <div class="flight-value">
-      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlight(flight)">
+      <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightGoing(flight)">
  Book
  </button>
   </div>
@@ -99,3 +99,107 @@
  </span>
   </div>
 </div>
+
+
+
+<div class="flex-container" *ngIf="flightDataComing && flightDataComing.length > 0">
+    <div>
+        <span>
+      <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div class="journey-details">
+        <span class="details-display">{{flightDataComing[0].item.origin}} to {{flightDataComing[0].item.destination}}
+      </span>
+        <span class="details-display-secondary">{{this.noOfFlightsComing}} flights found Sun, 01 November
+      </span>
+    </div>
+  </div>
+  <div class="flex-container2" *ngFor="let flight of flightDataComing;index as i">
+    <div>
+        <span>
+      <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+      </span>
+    </div>
+    <div *ngIf="!flight.isMultiple">
+        <span class="details-display">{{flight.item.name}}
+      </span>
+        <span class="details-display-secondary">{{flight.item.flightNo}}
+      </span>
+    </div>
+    <div *ngIf="flight.isMultiple">
+        <span class="details-display">Multiple
+      </span>
+        <button class="hyperlink details-display-secondary" (click)="showMultipleFlightDetails(flight.data, flight)">Show details</button>
+        <div class="flex-container2 multiple-flights" [hidden]="!flight.showFlightDetails" *ngFor="let d of multipleData;index as i">
+            <div>
+                <span>
+         <img src="../../../assets/images/flight-icon.png" width="50px" height="50px">
+         </span>
+            </div>
+            <div>
+                <span class="details-display">{{d.name}}
+         </span>
+                <span class="details-display-secondary">{{d.flightNo}}
+         </span>
+            </div>
+            <div>
+                <span class="details-display">{{d.departureTime}}
+         </span>
+                <span class="details-display-secondary">{{d.origin}}
+         </span>
+            </div>
+            <div>
+                <span class="details-display">{{d.arrivalTime}}
+         </span>
+                <span class="details-display-secondary">{{d.destination}}
+         </span>
+            </div>
+            <div>
+                <span class="details-display">{{d.duration}}
+         </span>
+                <span class="details-display-secondary">Non stop
+         </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <span class="details-display">{{flight.item.departureTime}}
+   </span>
+        <span class="details-display-secondary">{{flight.item.origin}}
+   </span>
+    </div>
+    <div>
+        <span class="details-display">{{flight.item.arrivalTime}}
+   </span>
+        <span class="details-display-secondary">{{flight.item.destination}}
+   </span>
+    </div>
+    <div>
+        <span class="details-display">{{flight.item.duration}}
+   </span>
+        <span class="details-display-secondary">Non stop
+   </span>
+    </div>
+    <div class="flight-value">
+        <span>
+   <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+   </span>
+        <span class="flight-price">{{flight.item.price}}
+   </span>
+    </div>
+    <div class="flight-value">
+        <button class="btn bordered w-auto font-medium-dark" (click)="bookFlightComing(flight)">
+   Book
+   </button>
+    </div>
+    <div class="flight-value total-fare" [hidden]="!flight.displayTotalFareComing">
+        <label class="total-fare-label">Total Fare
+   </label>
+        <span>
+   <img src="../../../assets/images/rupee-symbol.png" width="15px" height="15px">
+   </span>
+        <span class="flight-price">{{this.passengersComing * flight.item.price}}
+   </span>
+    </div>
+  </div>

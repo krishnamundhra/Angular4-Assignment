@@ -10,7 +10,6 @@ import { Ng5SliderModule } from 'ng5-slider';
 
 import { FlightResultsComponent } from './templates/flight-results/flight-results.component';
 import { OneWayJourneyDetailsComponentComponent } from './components/one-way-journey-details-component/one-way-journey-details-component.component';
-import { TwoWayJourneyDetailsComponentComponent } from './components/two-way-journey-details-component/two-way-journey-details-component.component';
 import { HeaderComponentComponent } from './components/header-component/header-component.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { HeaderComponentComponent } from './components/header-component/header-c
     AppComponent,
     FlightResultsComponent,
     OneWayJourneyDetailsComponentComponent,
-    TwoWayJourneyDetailsComponentComponent,
     HeaderComponentComponent
   ],
   imports: [
@@ -34,7 +32,6 @@ import { HeaderComponentComponent } from './components/header-component/header-c
   exports: [
     FlightResultsComponent,
     OneWayJourneyDetailsComponentComponent,
-    TwoWayJourneyDetailsComponentComponent,
     HeaderComponentComponent
   ],
   providers: [],

@@ -42,5 +42,22 @@ export class FlightService {
     });
     return flightDataGoing;
   }
+
+  calculateDuration2(flightDataComing: any[]): any[] {
+    flightDataComing = flightDataComing.map(flight => {
+      const time1 = moment(flight.item.arrivalDt);
+      const time2 = moment(flight.item.departureDt);
+      
+      const duration = moment.duration(time1.diff(time2));
+      const milliseconds = duration.asMilliseconds();    
+      
+      //Function to get duration in hours, minutes and seconds
+      const finalTime = this.parseMillisecondsIntoReadableTime(milliseconds);
+      flight.item.duration = finalTime; 
+
+      return flight;
+    });
+    return flightDataComing;
+  }
   
 }
