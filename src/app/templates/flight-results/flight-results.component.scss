@@ -38,18 +38,18 @@
 }
 
 // SCSS for Journey Tabs
-.tab-base {
-  padding: 0px;
-}
+// .tab-base {
+//  // padding: 0px;
+// }
 
 .tab-base>ul {
-  margin-left: 0px !important;
-  margin-bottom: 0px !important;
+//  margin-left: 0px !important;
+ // margin-bottom: 0px !important;
   border: 0px !important;
 }
 
 .tab-base>ul>li {
-  margin: 0px 6px -1px 0px;
+ margin-right: 1rem;
   border: $width solid $primary-black;
   border-radius: $width*2;
 }
@@ -60,7 +60,8 @@
   margin: 0px;
   line-height: 20px;
   background-color: #fff !important;
-  color: #565656 !important;
+  cursor: pointer;
+  //color: #565656 !important;
 }
 
 .tab-base>.nav-tabs>.active>a {
@@ -69,34 +70,34 @@
   color: #fff !important;
 }
 
-.tab-base>ul>li>a:hover {
-  margin: 0px;
-}
+// .tab-base>ul>li>a:hover {
+//   //margin: 0px;
+// }
 
 .nav-tabs>li {
   float: left;
   margin-bottom: -$width;
 }
 
-.nav>li {
-  position: relative;
-  display: block;
-}
+// .nav>li {
+//  // position: relative;
+//   //display: block;
+// }
 
-.nav>li>a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-}
+// .nav>li>a {
+//   //position: relative;
+//  // display: block;
+//  // padding: 10px 15px;
+// }
 
 a {
   color: #337ab7;
   text-decoration: none;
 }
 
-.active, .inactive {
-  cursor: pointer;
-}
+// .active, .inactive {
+//   cursor: pointer;
+// }
 
 //SCSS for Flight Search Form
 .flight-search {

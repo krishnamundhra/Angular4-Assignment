@@ -53,7 +53,7 @@
           <div class="form-control form-customInput slider-box">
             <label>Refine Flight Search
             </label>
-            <ng5-slider class="slider" [(value)]="value" [options]="options">
+            <ng5-slider class="slider" [(value)]="flightValue" [options]="options">
             </ng5-slider>
           </div>
           <div class="search-button p-1-0">
@@ -67,7 +67,7 @@
   </div>
   <div class="section-seperator">
   </div>
-  <div class="two" *ngIf="this.finalGoing && !this.finalComing">
+  <div class="two" *ngIf="this.flightDTO">
     <app-one-way-journey-details-component [flightDataGoing]="this.flightDTO" [passengersGoing]="noPassengers">
     </app-one-way-journey-details-component>
   </div>

@@ -8,7 +8,7 @@ export class MockFlightJSONService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getMockData(): Observable<any[]> {
+  getMockData(): Observable<any[]> {
 
     const url = 'https://tw-frontenders.firebaseio.com/advFlightSearch.json';
     return this.httpClient.get<any[]>(url);

@@ -1,4 +1,4 @@
-export class FlightItem {
+export interface FlightItem {
     arrivalTime: string;
     departureTime: string;
     destination: string;
@@ -10,7 +10,7 @@ export class FlightItem {
     arrivalDt: Date;
     departureDt: Date;
 }
-export class FlightDTO {
+export interface FlightDTO {
     item: FlightItem;
     isMultiple: boolean;
     data: FlightItem[];

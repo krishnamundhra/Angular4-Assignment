@@ -13,7 +13,6 @@ export class DateService {
         dateDelimiter = '/',
         timeDelimiter = ':'
     ) {
-        debugger;
         const dateArray = dateString.split(dateDelimiter);
         const aTimeArray = timeString.split(timeDelimiter);
 

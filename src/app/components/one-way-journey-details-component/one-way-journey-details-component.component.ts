@@ -23,11 +23,11 @@ export class OneWayJourneyDetailsComponentComponent {
     this.flightDataGoing = this.flightService.calculateDuration(this.flightDataGoing);
   }
 
-  public bookFlight(flight) {
+  bookFlight(flight) {
     flight.displayTotalFareGoing = !flight.displayTotalFareGoing;
   }
 
-  public showMultipleFlightDetails(data, flight) {
+  showMultipleFlightDetails(data, flight) {
     this.multipleData = data;
     flight.showFlightDetails = !flight.showFlightDetails;
   }

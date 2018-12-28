@@ -3,7 +3,6 @@ import { MockFlightJSONService } from '../../services/mock-flight-json.service';
 import { Observable } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Options } from 'ng5-slider';
-import * as moment from 'moment';
 import { FlightItem, FlightDTO } from 'src/app/models/flight-item';
 import { DateService } from 'src/app/services/date.service';
 
@@ -31,10 +30,10 @@ export class FlightResultsComponent implements OnInit {
   disabled: boolean;
   journey = true;
 
-  value: number = 0;
+  flightValue: number = 15000;
   options: Options = {
     floor: 0,
-    ceil: 10000
+    ceil: 15000
   };
 
   search = (text$: Observable<string>) =>
@@ -54,7 +53,7 @@ export class FlightResultsComponent implements OnInit {
     this.disabled = true;
   }
 
-  public searchResults() {
+  searchResults() {
     this.MockFlightJSONService.getMockData().subscribe(
      res => {
       this.flightData = res;
@@ -64,7 +63,7 @@ export class FlightResultsComponent implements OnInit {
       for (let i in this.flightData) {
        if (this.dtmodel != null) {
         this.finalDateGoing = this.dtmodel.year + "/" + this.dtmodel.month + "/0" + this.dtmodel.day;
-        if ((this.origin == this.flightData[i].origin) && (this.destination == this.flightData[i].destination) && (this.finalDateGoing == this.flightData[i].date)) {
+        if ((this.origin == this.flightData[i].origin) && (this.destination == this.flightData[i].destination) && (this.finalDateGoing == this.flightData[i].date) && (this.flightValue >= this.flightData[i].price)) {
          flightRouteGoing.push(this.flightData[i]);
          this.finalGoing = flightRouteGoing;
         }
@@ -111,13 +110,15 @@ export class FlightResultsComponent implements OnInit {
        departingFlights.forEach((dFlight, index, departingFlights) => {
         const arrival = dFlight.destination;
         const arrivalTime = dFlight.atime;
+        const dflightPrice = dFlight.price;
   
         const finalArrivalFlights = arrivalFlights.filter(
          (flight, index, arrivalFlights) => {
-          const timeDiff =
-           (flight.dtime.getTime() - arrivalTime.getTime()) / (30 * 60 * 1000);
+          const timeDiff = (flight.dtime.getTime() - arrivalTime.getTime()) / (30 * 60 * 1000);
+          const arrFlightPrice = flight.price;
+          const finalPrice = dflightPrice + arrFlightPrice;
   
-          if (flight.origin === arrival && timeDiff >= 1) {
+          if (flight.origin === arrival && timeDiff >= 1 && (this.flightValue >= finalPrice)) {
            return flight;
           }
           return null;
@@ -182,7 +183,7 @@ export class FlightResultsComponent implements OnInit {
     );
    }
   
-   public hideReturnDate() {
+  hideReturnDate() {
     this.rdmodel = '';
    }
 }

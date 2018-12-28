@@ -62,7 +62,7 @@ export class TwoWayJourneyDetailsComponentComponent implements OnInit {
     }
    }
   
-   public parseMillisecondsIntoReadableTime(milliseconds) {
+   parseMillisecondsIntoReadableTime(milliseconds) {
     var hours = milliseconds / (1000 * 60 * 60);
     var absoluteHours = Math.floor(hours);
     var h = absoluteHours > 9 ? absoluteHours : '0' + absoluteHours;
@@ -80,11 +80,11 @@ export class TwoWayJourneyDetailsComponentComponent implements OnInit {
     return h + 'h' + " " + m + 'm';
    };
   
-   public bookFlightGoing(flight) {
+   bookFlightGoing(flight) {
     flight.displayTotalFareGoing = !flight.displayTotalFareGoing;
    }
   
-   public bookFlightComing(flight2) {
+   bookFlightComing(flight2) {
     flight2.displayTotalFareComing = !flight2.displayTotalFareComing;
    }
    }

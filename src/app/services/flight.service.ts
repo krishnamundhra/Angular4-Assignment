@@ -26,7 +26,7 @@ export class FlightService {
     return h + 'h' + " " + m + 'm';
   };
 
-  public calculateDuration(flightDataGoing: any[]): any[] {
+  calculateDuration(flightDataGoing: any[]): any[] {
     flightDataGoing = flightDataGoing.map(flight => {
       const time1 = moment(flight.item.arrivalDt);
       const time2 = moment(flight.item.departureDt);
