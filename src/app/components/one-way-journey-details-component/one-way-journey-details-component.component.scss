@@ -68,21 +68,12 @@ body {
 
   &.hyperlink {
     color: blue;
-    /* background: white; */
-    /* font-size: 15px; */
-    background: none!important;
-    /* color: inherit; */
-    /* border: none; */
-    /* padding: 0rem 0rem 0rem 0rem; */
-    /* font: inherit; */
+    background: none !important;
     border-bottom: 1px solid blue;
     cursor: pointer;
-    /* margin: 0rem 0rem 0rem 0rem; */
     width: auto;
   }
 }
-
-
 
 .flight-value {
   display: inline-flex;
