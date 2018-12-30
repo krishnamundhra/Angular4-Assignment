@@ -19,6 +19,8 @@ export class OneWayJourneyDetailsComponentComponent {
   displayTotalFareComing: boolean;
   showFlightDetails: boolean;
   multipleData: any;
+  section :any[]=[];
+  multipleflight: any[];
 
   constructor(private flightService: FlightService) { }
 
@@ -43,8 +45,8 @@ export class OneWayJourneyDetailsComponentComponent {
   }
 
   showMultipleFlightDetails(data, flight) {
+    this.multipleflight = this.flightService.calculateDuration3(data);
     this.multipleData = data;
-    flight.showFlightDetails = !flight.showFlightDetails;
+    flight.showFlightDetails = !flight.showFlightDetails;    
   }
 }
-

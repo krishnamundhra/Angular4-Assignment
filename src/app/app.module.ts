@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AccordionModule } from "ngx-accordion";
 
 import { FlightResultsComponent } from './templates/flight-results/flight-results.component';
 import { OneWayJourneyDetailsComponentComponent } from './components/one-way-journey-details-component/one-way-journey-details-component.component';
@@ -27,7 +28,8 @@ import { HeaderComponentComponent } from './components/header-component/header-c
     ReactiveFormsModule,
     BrowserAnimationsModule,
     Ng5SliderModule,
-    NgbModule
+    NgbModule,
+    AccordionModule
   ],
   exports: [
     FlightResultsComponent,

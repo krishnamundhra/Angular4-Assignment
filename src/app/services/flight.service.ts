@@ -59,5 +59,22 @@ export class FlightService {
     });
     return flightDataComing;
   }
+
+  calculateDuration3(data: any[]): any[] {
+    data = data.map(flight => {
+      const time1 = moment(flight.atime);
+      const time2 = moment(flight.dtime);
+      
+      const duration = moment.duration(time1.diff(time2));
+      const milliseconds = duration.asMilliseconds();    
+      
+      //Function to get duration in hours, minutes and seconds
+      const finalTime = this.parseMillisecondsIntoReadableTime(milliseconds);
+      flight.duration = finalTime; 
+
+      return flight;
+    });
+    return data;
+  }
   
 }

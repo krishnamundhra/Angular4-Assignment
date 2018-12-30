@@ -24,23 +24,22 @@ body {
 .flex-container2 {
   border: $width solid $primary-black;
   line-height: normal;
-  margin: 0.5rem;
   display: flex;
   align-items: center;
   background-color: $primary-white;
 
   &.multiple-flights {
-    margin-top: 3rem;
+    padding: 1rem;
+    background-color: lightgrey;
   }
 }
 
 .flex-container2 > div {
-  padding: 0.7rem;
+  padding: 0.48rem;
 }
 
 .flex-container2.multiple-flights > div {
-  margin: 0.15rem;
-  padding: 0.15rem;
+  margin: 0.1rem;
 }
 
 .flex-container > div {
