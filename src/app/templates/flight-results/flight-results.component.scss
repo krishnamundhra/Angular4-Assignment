@@ -44,7 +44,6 @@
 .tab-base>ul>li {
  margin-right: 1rem;
   border: $width solid $primary-black;
-  border-radius: $width*2;
 }
 
 .tab-base>ul>li>a {
@@ -57,21 +56,14 @@
 }
 
 .tab-base>.nav-tabs>.active>a {
-  border: 0px !important;
   background: #3694F8 !important;
   color: #fff !important;
-}
-
-.nav-tabs>li {
-  float: left;
-  margin-bottom: -$width;
 }
 
 a {
   color: #337ab7;
   text-decoration: none;
 }
-
 
 //SCSS for Flight Search Form
 .flight-search {

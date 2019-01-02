@@ -16,28 +16,14 @@
     user-select: none;
   }
 
-  header {
-    position: static;
-    left: 0;
-    right: 0;
-    top: 0;
-    border: $width solid $primary-black;
-  }
-
   section {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-top: -$width;
     border: $width solid $primary-black;
   }
  
-
   input,
   select {
     @include button-mixin($primary-white !important, $primary-black !important);
   }
-
 
   label {
     float: left;
@@ -100,21 +86,7 @@
       text-decoration: underline;
     }
   }
-  .accent-color {
-    color: $accentColor;
-  }
   
-  .inline-block {
-    display: inline-block;
-  }
-  
-  .transparent {
-    background: transparent;
-    color: $primary-white;
-    box-shadow: unset;
-  }
-  
-
   
   /*************************\
   FONT STARTS

@@ -1,6 +1,7 @@
 @import '../../../assets/scss/variables.scss';
 @import '../../../styles.scss';
 
+//SCSS for Journey Details Header
 body {
   $font: 'Montserrat', sans-serif;
   font: 400 1rem #{$font};
@@ -21,6 +22,7 @@ body {
   }
 }
 
+//SCSS for Journey Details Section
 .flex-container2 {
   border: $width solid $primary-black;
   line-height: normal;
@@ -51,7 +53,7 @@ body {
   padding: 0rem 0.5rem 0rem 0.5rem;
   font-weight: $fontWeight-normal;
   float: left;
-  font-size: 16px;
+  font-size: $fontsize-normal;
 
     &.price-color {
       color: red;
@@ -61,7 +63,7 @@ body {
 .details-display-secondary {
   padding: 0rem 0.6rem 0rem 0.6rem;
   font-weight: 400;
-  font-size: 13px;
+  font-size: $fontsize-xxsmall;
   float: left;
   color: darkgrey;
 

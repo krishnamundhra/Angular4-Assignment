@@ -1,4 +1,4 @@
-<!–– For One Way Journey––>
+<!---For One-Way Journey-->
 <div class="flex-container" *ngIf="flightDataGoing && flightDataGoing.length > 0">
    <div>
       <span>
@@ -12,7 +12,7 @@
       </span>
    </div>
 </div>
-<accordion>
+<accordion *ngIf="flightDataGoing && flightDataGoing.length > 0">
    <accordion-group *ngFor="let flight of flightDataGoing;index as i">
       <accordion-heading>
          <div class="flex-container2">
@@ -106,7 +106,8 @@
       </div>
    </accordion-group>
 </accordion>
-<!–– For Two Way Journey––>
+
+<!---For Two-Way Journey-->
 <div class="flex-container" *ngIf="flightDataComing && flightDataComing.length > 0">
    <div>
       <span>
@@ -120,7 +121,7 @@
       </span>
    </div>
 </div>
-<accordion>
+<accordion *ngIf="flightDataComing && flightDataComing.length > 0">
    <accordion-group *ngFor="let flight of flightDataComing;index as i">
       <accordion-heading>
          <div class="flex-container2">
